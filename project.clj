@@ -14,6 +14,7 @@
                  [lib-noir "0.8.1"]
                  [http-kit "2.1.12"]]
   :main ^:skip-aot picture-gallery.main
+  :min-lein-version "2.0.0"
   :plugins [[lein-ring "0.8.7"]]
   :ring {:handler picture-gallery.handler/app
          :init picture-gallery.handler/init
