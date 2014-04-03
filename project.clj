@@ -19,7 +19,6 @@
   :ring {:handler picture-gallery.handler/app
          :init picture-gallery.handler/init
          :destroy picture-gallery.handler/destroy}
-  :aliases {"test-ancient" ["with-profile" "..." "midje"]}
   :profiles
   {:production
    {:ring
