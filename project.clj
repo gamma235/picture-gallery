@@ -21,9 +21,4 @@
          :destroy picture-gallery.handler/destroy}
   :profiles
   {:uberjar {:main picture-gallery.main, :aot :all}}
-  {:production
-   {:ring
-    {:open-browser? false, :stacktraces? false, :auto-reload? false}}
-   :dev
-   {:dependencies [[ring-mock "0.1.5"] [ring/ring-devel "1.2.2"]]}}
   )
