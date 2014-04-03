@@ -11,7 +11,9 @@
                  [org.clojure/java.jdbc "0.2.3"]
                  [com.taoensso/timbre "3.1.6"]
                  [com.postspectacular/rotor "0.1.0"]
-                 [lib-noir "0.8.1"]]
+                 [lib-noir "0.8.1"]
+                 [http-kit "2.1.12"]]
+  :main ^:skip-aot picture-gallery.main
   :plugins [[lein-ring "0.8.7"]]
   :ring {:handler picture-gallery.handler/app
          :init picture-gallery.handler/init
