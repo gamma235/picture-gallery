@@ -1,10 +1,11 @@
 (ns picture-gallery.main
   (:use picture-gallery.handler
+        picture-gallery.models.schema
         [org.httpkit.server :only [run-server]]
         [ring.middleware file-info file])
   (:gen-class))
 
-(defn -main [& [port]]
-  (let [port (if port (Integer/parseInt port) 5000)]
-    (run-server app {:port port})
-    (println (str "You can view the site at http://localhost:" port))))
+(defn -main []
+  (schema/migrate)
+  (let [port (Integer. (or (System/getenv "PORT") "8080"))]
+    (start port)))
