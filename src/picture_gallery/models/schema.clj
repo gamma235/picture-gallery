@@ -2,8 +2,8 @@
   (:require [picture-gallery.models.db :refer :all]
             [clojure.java.jdbc :as sql]))
 
-(def spec (or (System/getenv "DATABASE_URL")
-              "postgresql://localhost:5432/picture-gallery"))
+;(def spec (or (System/getenv "DATABASE_URL")
+;             "postgresql://localhost:5432/gallery"))
 
 (defn create-users-table []
   (sql/with-connection db
@@ -18,14 +18,3 @@
       :images
       [:userid "varchar(32)"]
       [:name "varchar(100)"])))
-
-(defn migrated? []
-  (-> (sql/query spec
-                 [(str "select count(*) from information_schema.tables "
-                       "where table_name='users'")])
-      first :count pos?))
-
-(defn migrate []
-  (when (not (migrated?))
-    (print "Creating database structure...") (flush)
-    (sql/db-do-commands spec create-users-table)))

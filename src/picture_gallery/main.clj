@@ -6,6 +6,5 @@
   (:gen-class))
 
 (defn -main []
-  (schema/migrate)
   (let [port (Integer. (or (System/getenv "PORT") "8080"))]
-    (start port)))
+    (run-server app port)))
