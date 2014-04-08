@@ -9,11 +9,17 @@
                  [hiccup "1.0.5"]
                  [ring-server "0.3.1"]
                  [postgresql/postgresql "9.1-901-1.jdbc4"]
-                 [org.clojure/java.jdbc "0.2.3"]
                  [com.taoensso/timbre "3.1.6"]
                  [com.postspectacular/rotor "0.1.0"]
                  [lib-noir "0.8.1"]
-                 [http-kit "2.1.12"]]
+                 [http-kit "2.1.12"]
+                 [selmer "0.5.4"]
+                 [korma "0.3.0-RC5"]
+                 [log4j "1.2.15"
+                  :exclusions [javax.mail/mail
+                               javax.jms/jms
+                               com.sun.jdmk/jmxtools
+                               com.sun.jmx/jmxri]]]
   :main picture-gallery.main
   :uberjar-name "picture-gallery-0.1.0-SNAPSHOT-standalone.jar"
   :plugins [[lein-ring "0.8.7"]]

@@ -6,5 +6,5 @@
   (:gen-class))
 
 (defn -main []
-    (let [port (Integer. (System/getenv "PORT"))]
+    (let [port (Integer. (or (System/getenv "PORT") "3000"))]
       (run-jetty app {:port port})))
