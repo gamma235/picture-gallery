@@ -1,4 +1,4 @@
 picture-gallery
 ===============
 
-picture gallery site, (Clojure/javascript/HTML/CSS)
+picture gallery website, from Web Development with Clojure tutorial. 
