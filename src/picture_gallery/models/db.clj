@@ -3,8 +3,7 @@
             [korma.db :refer [defdb transaction]]
             [korma.core :refer :all]))
 
-(def db (or (System/getenv "DATABASE_URL")
-             "postgresql://localhost:5432/gallery"))
+(def db (System/getenv "DATABASE_URL"))
 
 (defdb korma-db db)
 

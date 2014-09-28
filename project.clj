@@ -27,5 +27,6 @@
          :init picture-gallery.handler/init
          :destroy picture-gallery.handler/destroy}
   :profiles
-  {:uberjar {:main picture-gallery.main, :aot :all}}
+  {:uberjar {:main picture-gallery.main, :aot :all}
+   :production {:env {:production true}}}
   )
